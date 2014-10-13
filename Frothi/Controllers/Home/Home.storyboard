@@ -19,7 +19,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOO-6Z-NAi">
-                                            <rect key="frame" x="0.0" y="0.0" width="319" height="152"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="152"/>
                                             <state key="normal" image="latte-full">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -115,8 +115,8 @@
             <objects>
                 <viewController id="FPc-Pj-jMb" customClass="OrderController" customModule="Frothi" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sQ8-He-BG8"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cb5-Ye-i2E"/>
+                        <viewControllerLayoutGuide type="top" id="TFb-Dr-VBo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Otg-IM-QxQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4Dq-yB-mnP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
