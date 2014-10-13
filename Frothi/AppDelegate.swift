@@ -15,20 +15,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//    window = UIWindow(frame: UIScreen.mainScreen().bounds)
     
-    let mainStoryboard = UIStoryboard(name: "Home", bundle: nil)
-    let homeController = mainStoryboard.instantiateInitialViewController() as UINavigationController
-    let sideMenuStoryboard = UIStoryboard(name: "SideMenu", bundle: nil)
-    let sideMenuController = sideMenuStoryboard.instantiateInitialViewController() as SideMenuController
-
-    sideMenuController.homeController = homeController
-    
-    var revealController = SWRevealViewController(rearViewController: sideMenuController, frontViewController: homeController)
-//        revealController.rearViewRevealWidth = 215
-    
-    window?.rootViewController = revealController
-    window?.makeKeyAndVisible()
+//    let mainStoryboard = UIStoryboard(name: "Home", bundle: nil)
+//    let homeController = mainStoryboard.instantiateInitialViewController() as UINavigationController
+//    let sideMenuStoryboard = UIStoryboard(name: "SideMenu", bundle: nil)
+//    let sideMenuController = sideMenuStoryboard.instantiateInitialViewController() as SideMenuController
+//
+//    sideMenuController.homeController = homeController
+//    
+//    var revealController = SWRevealViewController(rearViewController: sideMenuController, frontViewController: homeController)
+////        revealController.rearViewRevealWidth = 215
+//    
+//    window?.rootViewController = revealController
+//    window?.makeKeyAndVisible()
 
     return true
   }
