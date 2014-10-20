@@ -8,9 +8,12 @@ class SideMenuController : UIViewController, UITableViewDataSource, UITableViewD
   let orangeColor = UIColor(red: 57/255, green: 35/255, blue: 13/225, alpha: 1.0).CGColor
   
   
-  let navigation:Dictionary<String,String> = ["Menu": "icon-cup", "Account": "icon-account", "Service Areas": "icon-map"]
+  let navigation = [
+      0 : ["text": "Menu",          "image" : "icon-cup"],
+      1 : ["text": "Account",       "image" : "icon-account"],
+      2 : ["text": "Service Areas", "image": "icon-map"]
+    ]
   let cellIdentifier:String = "Navigation"
-  
   var homeController:UINavigationController!
   var activeIndexPath:NSIndexPath?
   
@@ -45,10 +48,16 @@ class SideMenuController : UIViewController, UITableViewDataSource, UITableViewD
     let key = Array(navigation.keys)[indexPath.row]
     let icon = navigation[key]!
     
-    cell.navLabel?.text = key
-    cell.navImageView.image = UIImage(named: icon)
+    let navItem = navigation[indexPath.row]!
+    cell.navLabel?.text = navItem["text"]
+    cell.navImageView.image = UIImage(named: navItem["image"]!)
     
-    if key == "Menu" {
+    
+    
+//    cell.navLabel?.text = key
+//    cell.navImageView.image = UIImage(named: icon)
+    
+    if navItem["text"] == "Menu" {
       activeIndexPath = indexPath
     }
     
@@ -59,10 +68,12 @@ class SideMenuController : UIViewController, UITableViewDataSource, UITableViewD
   //  UITableViewDelegate Methods
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
     var newFrontController:UIViewController
-    let selectedNav:String = Array(navigation.keys)[indexPath.row]
+//    let selectedNav:String = Array(navigation.keys)[indexPath.row]
+    let selectedNav = navigation[indexPath.row]!
     activeCellDidChange(indexPath)
+//    let activeTab:String = selectedNav["text"]!
     
-    switch selectedNav {
+    switch selectedNav["text"]! {
     case "Menu":
       newFrontController = homeController
     case "Account":
@@ -86,16 +97,16 @@ class SideMenuController : UIViewController, UITableViewDataSource, UITableViewD
   
   func activeCellDidChange(newIndexPath:NSIndexPath) {
     if let unwrappedActiveIndexPath = activeIndexPath {
-      let keys = Array(navigation.keys)
       let prevActiveCell = tableView.cellForRowAtIndexPath(unwrappedActiveIndexPath) as NavigationTableViewCell
       let newActiveCell = tableView.cellForRowAtIndexPath(newIndexPath) as NavigationTableViewCell
-      let prevKey = keys[unwrappedActiveIndexPath.row]
-      let prevIcon = navigation[prevKey]!
-      let newKey = keys[newIndexPath.row]
-      let newIcon = navigation[newKey]!
+      let prevNavItem = navigation[unwrappedActiveIndexPath.row]!
+      let prevIcon = prevNavItem["image"]!
+      let newNavItem = navigation[newIndexPath.row]!
+      let newIcon = newNavItem["image"]!
       
       prevActiveCell.navImageView.image = UIImage(named: prevIcon)
       newActiveCell.navImageView.image = UIImage(named: "\(newIcon)-active")
+      
       
       activeIndexPath = newIndexPath
     }

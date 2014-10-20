@@ -6,14 +6,12 @@ class Session {
       
       let token = response["token"] as? String
       CurrentUser.sharedInstance.setToken(token)
-      
       success(operation, response)
       
-      }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+    }, failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
         
-        failure(operation, error)
+      failure(operation, error)
         
     })
   }
-  
 }

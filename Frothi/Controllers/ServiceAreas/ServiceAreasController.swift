@@ -23,7 +23,7 @@ class ServiceAreasController : UIViewController, MKMapViewDelegate {
     view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     
     navigationController?.navigationBar.barTintColor = blueColor
-    let avenirNext:UIFont = UIFont(name: "Avenir Next", size: 20)
+    let avenirNext:UIFont = UIFont(name: "Avenir Next", size: 20)!
     let titleDict:NSDictionary = [NSFontAttributeName: avenirNext,NSForegroundColorAttributeName: UIColor.whiteColor()]
     navigationController?.navigationBar.titleTextAttributes = titleDict
     

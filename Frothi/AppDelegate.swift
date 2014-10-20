@@ -15,20 +15,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-//    window = UIWindow(frame: UIScreen.mainScreen().bounds)
+    window = UIWindow(frame: UIScreen.mainScreen().bounds)
+    var homeController:AnyObject?
     
-//    let mainStoryboard = UIStoryboard(name: "Home", bundle: nil)
-//    let homeController = mainStoryboard.instantiateInitialViewController() as UINavigationController
-//    let sideMenuStoryboard = UIStoryboard(name: "SideMenu", bundle: nil)
-//    let sideMenuController = sideMenuStoryboard.instantiateInitialViewController() as SideMenuController
-//
-//    sideMenuController.homeController = homeController
-//    
-//    var revealController = SWRevealViewController(rearViewController: sideMenuController, frontViewController: homeController)
-////        revealController.rearViewRevealWidth = 215
-//    
-//    window?.rootViewController = revealController
-//    window?.makeKeyAndVisible()
+//    Delete this line
+    CurrentUser.sharedInstance.clearToken()
+    
+    let sideMenuStoryboard = UIStoryboard(name: "SideMenu", bundle: nil)
+    let sideMenuController = sideMenuStoryboard.instantiateInitialViewController() as SideMenuController
+
+    if CurrentUser.sharedInstance.isLoggedIn() {
+      let mainStoryboard = UIStoryboard(name: "Home", bundle: nil)
+      homeController = mainStoryboard.instantiateInitialViewController() as UINavigationController
+      sideMenuController.homeController = homeController as UINavigationController
+    } else {
+      let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
+      homeController = loginStoryboard.instantiateInitialViewController() as LoginController
+    }
+
+
+
+    
+    var revealController = SWRevealViewController(rearViewController: sideMenuController, frontViewController: homeController as UIViewController)
+//        revealController.rearViewRevealWidth = 215
+    
+    window?.rootViewController = revealController
+    window?.makeKeyAndVisible()
 
     return true
   }

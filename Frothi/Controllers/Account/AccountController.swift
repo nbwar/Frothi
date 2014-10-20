@@ -13,7 +13,7 @@ class AccountController : UIViewController {
     view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     
     navigationController?.navigationBar.barTintColor = UIColor(red: 0.051, green: 0.520, blue: 0.733, alpha: 1)
-    let avenirNext:UIFont = UIFont(name: "Avenir Next", size: 20)
+    let avenirNext:UIFont = UIFont(name: "Avenir Next", size: 20)!
     let titleDict:NSDictionary = [NSFontAttributeName: avenirNext,NSForegroundColorAttributeName: UIColor.whiteColor()]
     navigationController?.navigationBar.titleTextAttributes = titleDict
   }

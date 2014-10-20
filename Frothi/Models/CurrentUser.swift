@@ -16,17 +16,17 @@ class CurrentUser {
   }
   
   func token() -> String? {
-    return "THIS THE TOKEN"
+    return Keychain.loadToken()
   }
   
   func setToken(token:String?) {
     if let unwrappedToken = token {
-      println("Setting token to \(unwrappedToken)")
+      Keychain.saveToken(unwrappedToken)
     }
   }
   
   func clearToken() {
-    //    Clear token from keychain
+    Keychain.saveToken("")
   }
   
   func isLoggedIn() -> Bool {

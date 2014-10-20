@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010C17B219F4BC97004F1E46 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C17B119F4BC97004F1E46 /* Keychain.swift */; };
 		014EF6D619EC679200FD1CEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014EF6D519EC679200FD1CEA /* AppDelegate.swift */; };
 		014EF6DD19EC679200FD1CEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 014EF6DC19EC679200FD1CEA /* Images.xcassets */; };
 		014EF6EC19EC679200FD1CEA /* FrothiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014EF6EB19EC679200FD1CEA /* FrothiTests.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		010C17B119F4BC97004F1E46 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		014EF6D019EC679200FD1CEA /* Frothi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frothi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		014EF6D419EC679200FD1CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		014EF6D519EC679200FD1CEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				014EF6FF19EC6E1C00FD1CEA /* Cart.swift */,
 				014EF70119EC6E2200FD1CEA /* Item.swift */,
 				014EF70319EC6E5700FD1CEA /* CurrentUser.swift */,
+				010C17B119F4BC97004F1E46 /* Keychain.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				014EF70A19EC724400FD1CEA /* MockData.swift in Sources */,
 				014EF70219EC6E2200FD1CEA /* Item.swift in Sources */,
 				014EF6FE19EC6D9100FD1CEA /* HomeController.swift in Sources */,
+				010C17B219F4BC97004F1E46 /* Keychain.swift in Sources */,
 				014EF71619EC730000FD1CEA /* CardTableViewCell.swift in Sources */,
 				014EF73019EC759100FD1CEA /* RegistrationController.swift in Sources */,
 				014EF70019EC6E1C00FD1CEA /* Cart.swift in Sources */,

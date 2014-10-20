@@ -14,7 +14,6 @@ class LoginController : UIViewController {
     super.viewDidLoad()
     BlurView.insertBlurView(backgroundBlurView, style: .Dark)
     loginView.alpha = 0
-    
   }
   
   override func viewDidAppear(animated: Bool) {
@@ -40,7 +39,13 @@ class LoginController : UIViewController {
       println("operation \(operation.responseData)")
       println("response \(response)")
       
-      //  Push to home controller or pop off the view stack depending how i implement the login screen
+      let mainStoryboard = UIStoryboard(name: "Home", bundle: nil)
+      let homeController = mainStoryboard.instantiateInitialViewController() as UINavigationController
+      let sideMenuController = self.revealViewController().rearViewController as SideMenuController
+      sideMenuController.homeController = homeController
+      self.revealViewController().pushFrontViewController(homeController, animated: true)
+      
+      
       }, failure: { (operation, response) in
         println("operation \(operation.responseData)")
         println("response \(response)")
