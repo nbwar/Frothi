@@ -1,6 +1,10 @@
 import UIKit
 
-class LoginController : UIViewController {
+protocol LoginControllerDelegate {
+  func transitionToHomeController()
+}
+
+class LoginController : UIViewController, LoginControllerDelegate {
   @IBOutlet weak var backgroundBlurView: UIView!
   @IBOutlet weak var createAccountButton: UIButton!
   @IBOutlet weak var loginView: UIView!
@@ -29,6 +33,16 @@ class LoginController : UIViewController {
     return true
   }
   
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier! == "loginToRegister" {
+      let navigationController = segue.destinationViewController as UINavigationController
+      let registrationController = navigationController.visibleViewController as RegistrationController
+      registrationController.delegate = self
+    }
+  }
+  
+//  ACTIONS
+  
   @IBAction func loginButtonPressed(sender: AnyObject) {
     let email = emailField.text!
     let password = passwordField.text!
@@ -36,15 +50,10 @@ class LoginController : UIViewController {
     
     
     Session.login(data, success: { (operation, response) in
-      println("operation \(operation.responseData)")
-      println("response \(response)")
+        println("operation \(operation.responseData)")
+        println("response \(response)")
       
-      let mainStoryboard = UIStoryboard(name: "Home", bundle: nil)
-      let homeController = mainStoryboard.instantiateInitialViewController() as UINavigationController
-      let sideMenuController = self.revealViewController().rearViewController as SideMenuController
-      sideMenuController.homeController = homeController
-      self.revealViewController().pushFrontViewController(homeController, animated: true)
-      
+        self.transitionToHomeController()
       
       }, failure: { (operation, response) in
         println("operation \(operation.responseData)")
@@ -66,4 +75,11 @@ class LoginController : UIViewController {
     loginView.alpha = 1
   }
   
+  func transitionToHomeController() {
+    let mainStoryboard = UIStoryboard(name: "Home", bundle: nil)
+    let homeController = mainStoryboard.instantiateInitialViewController() as UINavigationController
+    let sideMenuController = self.revealViewController().rearViewController as SideMenuController
+    sideMenuController.homeController = homeController
+    self.revealViewController().pushFrontViewController(homeController, animated: true)
+  }
 }
