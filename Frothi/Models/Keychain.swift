@@ -3,7 +3,6 @@ import Security
 
 let serviceIdentifier = "frothi"
 let tokenKey = "auth_token"
-//let accessGroup = "MySerivice"
 
 let kSecClassValue = NSString(format: kSecClass)
 let kSecAttrAccountValue = NSString(format: kSecAttrAccount)

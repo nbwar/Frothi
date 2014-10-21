@@ -10,7 +10,8 @@ class LoginController : UIViewController, LoginControllerDelegate {
   @IBOutlet weak var loginView: UIView!
   @IBOutlet weak var emailField: UITextField!
   @IBOutlet weak var passwordField: UITextField!
-  
+  @IBOutlet weak var facebookButton: UIButton!
+
   
   var animate:Bool = true
   
@@ -18,6 +19,7 @@ class LoginController : UIViewController, LoginControllerDelegate {
     super.viewDidLoad()
     BlurView.insertBlurView(backgroundBlurView, style: .Dark)
     loginView.alpha = 0
+
   }
   
   override func viewDidAppear(animated: Bool) {
@@ -61,6 +63,25 @@ class LoginController : UIViewController, LoginControllerDelegate {
         
     })
   }
+  
+  @IBAction func facebookLoginPressed(sender: AnyObject) {
+    FacebookAPI.sharedInstance.login({
+      self.transitionToHomeController()
+    })
+//    if FBSession.activeSession().state == FBSessionState.Open
+//      || FBSession.activeSession().state == FBSessionState.OpenTokenExtended {
+//      
+//        FBSession.activeSession().closeAndClearTokenInformation()
+//    } else {
+//      FBSession.openActiveSessionWithReadPermissions(["public_profile", "email"], allowLoginUI: true, completionHandler: { (session, state, error) -> Void in
+////        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+////        appDelegate.sessionStateChanged(session, state: state, error: error)
+//      })
+//    }
+  }
+
+  
+//  Helpers
   
   func animateLoginView() {
     let scale = CGAffineTransformMakeScale(0.5, 0.5)

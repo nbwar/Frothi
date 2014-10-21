@@ -9,9 +9,9 @@ class SideMenuController : UIViewController, UITableViewDataSource, UITableViewD
   
   
   let navigation = [
-      0 : ["text": "Menu",          "image" : "icon-cup"],
-      1 : ["text": "Account",       "image" : "icon-account"],
-      2 : ["text": "Service Areas", "image": "icon-map"]
+      0 : ["text" : "Menu",          "image" : "icon-cup"],
+      1 : ["text" : "Account",       "image" : "icon-account"],
+      2 : ["text" : "Service Areas", "image" : "icon-map"]
     ]
   let cellIdentifier:String = "Navigation"
   var homeController:UINavigationController!
@@ -52,11 +52,6 @@ class SideMenuController : UIViewController, UITableViewDataSource, UITableViewD
     cell.navLabel?.text = navItem["text"]
     cell.navImageView.image = UIImage(named: navItem["image"]!)
     
-    
-    
-//    cell.navLabel?.text = key
-//    cell.navImageView.image = UIImage(named: icon)
-    
     if navItem["text"] == "Menu" {
       activeIndexPath = indexPath
     }
@@ -68,10 +63,8 @@ class SideMenuController : UIViewController, UITableViewDataSource, UITableViewD
   //  UITableViewDelegate Methods
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
     var newFrontController:UIViewController
-//    let selectedNav:String = Array(navigation.keys)[indexPath.row]
     let selectedNav = navigation[indexPath.row]!
     activeCellDidChange(indexPath)
-//    let activeTab:String = selectedNav["text"]!
     
     switch selectedNav["text"]! {
     case "Menu":

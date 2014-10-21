@@ -20,6 +20,7 @@ class CurrentUser {
   }
   
   func setToken(token:String?) {
+    println("setting Token")
     if let unwrappedToken = token {
       Keychain.saveToken(unwrappedToken)
     }
