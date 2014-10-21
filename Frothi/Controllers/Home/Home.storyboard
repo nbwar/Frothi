@@ -47,7 +47,7 @@
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVU-up-3up">
+                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aVU-up-3up">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="152"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="latte-full" translatesAutoresizingMaskIntoConstraints="NO" id="q7G-Ks-BvK">
@@ -71,10 +71,10 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0061178454200000003" green="0.01016986091" blue="0.0069666779599999997" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ic-vM-Zhd">
+                                                <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Ic-vM-Zhd">
                                                     <rect key="frame" x="0.0" y="-1" width="320" height="153"/>
                                                     <subviews>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Excellent tasting latte. Damn this shit is good" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTV-wR-hfB">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Excellent tasting latte. Damn this shit is good" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTV-wR-hfB">
                                                             <rect key="frame" x="25" y="21" width="270" height="90"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
@@ -94,7 +94,7 @@
                                                         <constraint firstItem="LTV-wR-hfB" firstAttribute="leading" secondItem="7Ic-vM-Zhd" secondAttribute="leading" constant="25" id="rHJ-Qn-sJz"/>
                                                     </constraints>
                                                 </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRL-AW-HzF">
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRL-AW-HzF">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="130" id="PJA-K7-ne1"/>
