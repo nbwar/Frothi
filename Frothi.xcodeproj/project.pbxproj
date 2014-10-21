@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		010C17B219F4BC97004F1E46 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010C17B119F4BC97004F1E46 /* Keychain.swift */; };
+		012DA40219F716FB00CCF53E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012DA40119F716FB00CCF53E /* Constants.swift */; };
 		014EF6D619EC679200FD1CEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014EF6D519EC679200FD1CEA /* AppDelegate.swift */; };
 		014EF6DD19EC679200FD1CEA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 014EF6DC19EC679200FD1CEA /* Images.xcassets */; };
 		014EF6EC19EC679200FD1CEA /* FrothiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014EF6EB19EC679200FD1CEA /* FrothiTests.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		010C17B119F4BC97004F1E46 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		012DA40119F716FB00CCF53E /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		014EF6D019EC679200FD1CEA /* Frothi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frothi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		014EF6D419EC679200FD1CEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		014EF6D519EC679200FD1CEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012DA40019F7169800CCF53E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				012DA40119F716FB00CCF53E /* Constants.swift */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
 		014EF6C719EC679200FD1CEA = {
 			isa = PBXGroup;
 			children = (
@@ -138,8 +148,9 @@
 				014EF6F719EC68EF00FD1CEA /* Controllers */,
 				014EF6F619EC68EA00FD1CEA /* APIs */,
 				014EF6F519EC68CE00FD1CEA /* Models */,
-				014EF6DC19EC679200FD1CEA /* Images.xcassets */,
+				012DA40019F7169800CCF53E /* Config */,
 				014EF6D319EC679200FD1CEA /* Supporting Files */,
+				014EF6DC19EC679200FD1CEA /* Images.xcassets */,
 			);
 			path = Frothi;
 			sourceTree = "<group>";
@@ -419,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				014EF71419EC72DF00FD1CEA /* SpringAnimations.swift in Sources */,
+				012DA40219F716FB00CCF53E /* Constants.swift in Sources */,
 				014EF70E19EC727C00FD1CEA /* OrderController.swift in Sources */,
 				014EF70C19EC725700FD1CEA /* Session.swift in Sources */,
 				014EF72219EC742D00FD1CEA /* AccountController.swift in Sources */,

@@ -2,7 +2,8 @@ class Session {
   class func login(params:[String:String], success:((AFHTTPRequestOperation,AnyObject) -> Void)!, failure:((AFHTTPRequestOperation, NSError) -> Void)! ) {
     let manager = AFHTTPRequestOperationManager()
     
-    manager.POST("http://localhost:3000/api/login", parameters: params as AnyObject, success: { (operation: AFHTTPRequestOperation!,response: AnyObject!) in
+
+    manager.POST(BASE_URL + "login", parameters: params as AnyObject, success: { (operation: AFHTTPRequestOperation!,response: AnyObject!) in
       
       let token = response["token"] as? String
       CurrentUser.sharedInstance.setToken(token)
@@ -17,8 +18,8 @@ class Session {
     let manager = AFHTTPRequestOperationManager()
     
     let data = ["user" : params]
-    
-    manager.POST("http://localhost:3000/api/users", parameters: data as AnyObject, success: { (operation: AFHTTPRequestOperation!,response: AnyObject!) in
+
+    manager.POST(BASE_URL + "users", parameters: data as AnyObject, success: { (operation: AFHTTPRequestOperation!,response: AnyObject!) in
       
       let token = response["token"] as? String
       CurrentUser.sharedInstance.setToken(token)
