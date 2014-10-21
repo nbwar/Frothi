@@ -61,7 +61,8 @@ class FacebookAPI {
           }
         }), failure: { (operation, response) -> Void in
           println("there was an error")
-          FBSession.activeSession().closeAndClearTokenInformation()
+//          FBSession.activeSession().closeAndClearTokenInformation()
+          CurrentUser.sharedInstance.logOut()
         })
       })
       

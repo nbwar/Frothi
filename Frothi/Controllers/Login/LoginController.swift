@@ -68,16 +68,6 @@ class LoginController : UIViewController, LoginControllerDelegate {
     FacebookAPI.sharedInstance.login({
       self.transitionToHomeController()
     })
-//    if FBSession.activeSession().state == FBSessionState.Open
-//      || FBSession.activeSession().state == FBSessionState.OpenTokenExtended {
-//      
-//        FBSession.activeSession().closeAndClearTokenInformation()
-//    } else {
-//      FBSession.openActiveSessionWithReadPermissions(["public_profile", "email"], allowLoginUI: true, completionHandler: { (session, state, error) -> Void in
-////        let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-////        appDelegate.sessionStateChanged(session, state: state, error: error)
-//      })
-//    }
   }
 
   

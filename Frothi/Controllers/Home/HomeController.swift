@@ -61,25 +61,6 @@ class HomeController : UITableViewController, CardTableViewCellDelegate {
   
   //  CardTableViewCellDelegate Methods
   
-  func detailButtonPressed(cell: CardTableViewCell, sender: AnyObject) {
-//    detailView = NSBundle.mainBundle().loadNibNamed("DetailView", owner: self, options: nil).first as? DetailView
-//    detailView?.delegate = self
-    
-    let indexPath = tableView.indexPathForCell(cell)!
-    let item = data[indexPath.row]
-    
-//    detailView?.imageView.image = UIImage(named: item.image)
-//    detailView?.nameLabel.text = item.name
-    
-    //    Will have to changed font color and styles when changing the description text for some reason
-    //    detailView?.descriptionTextView.text = "HElLO"
-    //    detailView?.descriptionTextView.textColor = UIColor.whiteColor()
-    
-//    if (detailView != nil) {
-//      addViewToNavigationControllerWithAnimation(detailView!)
-//    }
-  }
-  
   func plusButtonPressed(cell: CardTableViewCell, sender: AnyObject) {
     var number = cell.amountLabel.text?.toInt()!
     number! += 1
@@ -101,14 +82,7 @@ class HomeController : UITableViewController, CardTableViewCellDelegate {
     cell.amountLabel.text = "\(number!)"
     
   }
-  
-  
-  //  DetailViewDelegate Methods
-  
-//  func closeButtonPressed(detailView: DetailView, sender: AnyObject) {
-//    removeViewFromNaviagtionControllerWithAnimation(detailView)
-//    self.detailView = nil
-//  }
+
   
   //  Helpers
   
