@@ -283,6 +283,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="g39-Yo-LtJ" appends="YES" id="T0d-xh-iGA"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="F09-oQ-0z0">
                         <barButtonItem key="leftBarButtonItem" image="icon-close" id="3yz-0W-Osn">
@@ -301,6 +305,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPB-kW-RGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="g39-Yo-LtJ">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="bkR-Hd-nvt" id="1BM-me-FoB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="522" y="263"/>
         </scene>
