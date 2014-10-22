@@ -21,7 +21,21 @@ class CardTableViewCell : UITableViewCell {
   
   
   @IBAction func detailButtonPressed(sender: AnyObject) {
-    detailBlurView.hidden = !detailBlurView.hidden
+    if detailBlurView.hidden {
+      detailBlurView.alpha = 0
+      detailBlurView.hidden = false
+      UIView.animateWithDuration(0.3, animations: {
+        self.detailBlurView.alpha = 1
+      })
+      
+    } else {
+      
+      UIView.animateWithDuration(0.3, animations: {
+        self.detailBlurView.alpha = 0
+      }, completion: { finished in
+        self.detailBlurView.hidden = true
+      })
+    }
   }
   
   @IBAction func plusButtonPressed(sender: AnyObject) {
