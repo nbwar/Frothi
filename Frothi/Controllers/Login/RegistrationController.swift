@@ -21,7 +21,7 @@ class RegistrationController : UIViewController, UITextFieldDelegate {
 
   @IBAction func dismissKeyboard(sender: AnyObject) {
     if nameField.isFirstResponder() {
-      nameField.resignFirstResponder() 
+      nameField.resignFirstResponder()
     } else if emailField.isFirstResponder() {
       emailField.resignFirstResponder()
     } else if phoneField.isFirstResponder() {

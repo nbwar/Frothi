@@ -116,7 +116,7 @@
 			children = (
 				012DA40119F716FB00CCF53E /* Constants.swift */,
 			);
-			name = Config;
+			path = Config;
 			sourceTree = "<group>";
 		};
 		014EF6C719EC679200FD1CEA = {
