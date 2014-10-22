@@ -55,6 +55,14 @@ class LoginController : UIViewController, LoginControllerDelegate, UITextFieldDe
     })
   }
   
+  @IBAction func dismissKeyboard(sender: AnyObject) {
+    if emailField.isFirstResponder() {
+      emailField.resignFirstResponder()
+    } else if passwordField.isFirstResponder() {
+      passwordField.resignFirstResponder()
+    }
+    
+  }
 //  UITextFieldDelegate methods
 
   func textFieldShouldReturn(textField: UITextField) -> Bool {

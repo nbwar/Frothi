@@ -143,6 +143,10 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="GTF-PI-kBv" appends="YES" id="att-2g-kl3"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -156,6 +160,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVr-tE-brI" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="GTF-PI-kBv">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="jBF-m4-Mhn" id="f0Q-Fk-rw1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-9.5999999999999996" y="-456.29333333333335"/>
         </scene>
