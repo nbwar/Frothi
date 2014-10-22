@@ -4,7 +4,7 @@ protocol LoginControllerDelegate {
   func transitionToHomeController()
 }
 
-class LoginController : UIViewController, LoginControllerDelegate {
+class LoginController : UIViewController, LoginControllerDelegate, UITextFieldDelegate {
   @IBOutlet weak var backgroundBlurView: UIView!
   @IBOutlet weak var createAccountButton: UIButton!
   @IBOutlet weak var loginView: UIView!
@@ -46,22 +46,7 @@ class LoginController : UIViewController, LoginControllerDelegate {
 //  ACTIONS
   
   @IBAction func loginButtonPressed(sender: AnyObject) {
-    let email = emailField.text!
-    let password = passwordField.text!
-    let data = ["email":email, "password":password]
-    
-    
-    Session.login(data, success: { (operation, response) in
-        println("operation \(operation.responseData)")
-        println("response \(response)")
-      
-        self.transitionToHomeController()
-      
-      }, failure: { (operation, response) in
-        println("operation \(operation.responseData)")
-        println("response \(response)")
-        
-    })
+    login()
   }
   
   @IBAction func facebookLoginPressed(sender: AnyObject) {
@@ -69,9 +54,41 @@ class LoginController : UIViewController, LoginControllerDelegate {
       self.transitionToHomeController()
     })
   }
+  
+//  UITextFieldDelegate methods
 
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    if textField == emailField {
+      passwordField.becomeFirstResponder()
+      
+    } else if textField == passwordField {
+      println("HELLO")
+      login()
+    }
+    
+    return false
+  }
   
 //  Helpers
+  
+  func login() {
+    let email = emailField.text!
+    let password = passwordField.text!
+    let data = ["email":email, "password":password]
+    
+    
+    Session.login(data, success: { (operation, response) in
+      println("operation \(operation.responseData)")
+      println("response \(response)")
+      
+      self.transitionToHomeController()
+      
+      }, failure: { (operation, response) in
+        println("operation \(operation.responseData)")
+        println("response \(response)")
+        
+    })
+  }
   
   func animateLoginView() {
     let scale = CGAffineTransformMakeScale(0.5, 0.5)
