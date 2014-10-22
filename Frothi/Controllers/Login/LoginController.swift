@@ -36,7 +36,7 @@ class LoginController : UIViewController, LoginControllerDelegate, UITextFieldDe
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier! == "loginToRegister" {
+    if segue.identifier == "loginToRegister" {
       let navigationController = segue.destinationViewController as UINavigationController
       let registrationController = navigationController.visibleViewController as RegistrationController
       registrationController.delegate = self
@@ -68,13 +68,10 @@ class LoginController : UIViewController, LoginControllerDelegate, UITextFieldDe
   func textFieldShouldReturn(textField: UITextField) -> Bool {
     if textField == emailField {
       passwordField.becomeFirstResponder()
-      
     } else if textField == passwordField {
-      println("HELLO")
       login()
     }
-    
-    return false
+    return true
   }
   
 //  Helpers
